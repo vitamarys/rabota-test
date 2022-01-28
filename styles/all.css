@@ -1,0 +1,427 @@
+@charset "UTF-8";
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Убираем внутренние отступы */
+ul,
+ol {
+  padding: 0;
+}
+
+/* Убираем внешние отступы */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul,
+ol,
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+@font-face {
+  font-family: "Graphik";
+  font-weight: 600;
+  src: url(../assets/fonts/Graphik-Bold-Web.woff2);
+}
+@font-face {
+  font-family: "Graphik";
+  font-weight: 400;
+  src: url(../assets/fonts/Graphik-Regular-Web.woff2);
+}
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  overflow-x: hidden;
+  font-family: "Graphik";
+  background: #E5E5E5;
+}
+
+/* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
+ul,
+ol {
+  list-style: none;
+}
+
+/* Упрощаем работу с изображениями */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Наследуем шрифты для инпутов и кнопок */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+.conteiner {
+  width: 750px;
+  margin: 0 auto;
+}
+@media (max-width: 1199px) {
+  .conteiner {
+    width: 730px;
+  }
+}
+@media (max-width: 575px) {
+  .conteiner {
+    width: 100%;
+    padding: 0 10px;
+  }
+}
+
+.wrapper {
+  width: 815px;
+  margin: 0 auto;
+}
+
+.header {
+  width: 100%;
+  padding: 20px 40px;
+  background-color: #FF5252;
+}
+
+.logo {
+  display: block;
+  width: fit-content;
+}
+
+.vacancies {
+  width: 100%;
+  padding: 40px 0;
+}
+
+.card {
+  width: 100%;
+  background: #FFFFFF;
+  box-shadow: 0px 10px 10px rgba(5, 5, 6, 0.05);
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+.card.ds .status {
+  visibility: visible;
+  background-color: #C8D1D6;
+  color: #303A3E;
+}
+.card.ds .card__baner, .card.ds .сompany, .card.ds .salary, .card.ds .deskr, .card.ds .badges {
+  filter: opacity(0.5);
+}
+.card.lk .status {
+  visibility: hidden;
+}
+.card.ch .cv {
+  display: block !important;
+}
+.card.ch .card__baner, .card.ch .сompany, .card.ch .salary, .card.ch .deskr, .card.ch .badges {
+  filter: opacity(0.5);
+}
+.card.ch .uploadcare--widget {
+  display: none;
+}
+.card.ch .status {
+  color: #00702D;
+  background: #D5FFE6;
+}
+.card.ch .like {
+  pointer-events: none;
+}
+.card.ch .dis {
+  pointer-events: none;
+}
+.card.er .error {
+  display: block;
+}
+.card__baner {
+  max-height: 100px;
+}
+.card__baner__img {
+  object-fit: cover;
+  height: 100%;
+  border-radius: 5px 5px 0 0;
+}
+.card .card__info {
+  padding: 20px;
+}
+.card .status {
+  display: block;
+  width: fit-content;
+  color: #BC0002;
+  background-color: #FFE9E9;
+  padding: 2px 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+.card .сompany {
+  display: flex;
+  justify-content: space-between;
+}
+.card .сompany__title {
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 30px;
+}
+.card .сompany__logo {
+  height: 60px;
+  max-width: 175px;
+}
+.card .salary {
+  display: flex;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+.card .salary__money {
+  font-size: 20px;
+  font-weight: 400;
+  margin-right: 10px;
+}
+.card .salary__comment {
+  font-size: 20px;
+  font-weight: 400;
+  color: #646464;
+}
+.card .badges {
+  width: 100%;
+}
+@media (max-width: 767px) {
+  .card .badges {
+    width: 100%;
+    padding: 0 10px;
+  }
+}
+.card .badges__list {
+  display: flex;
+  flex-wrap: wrap;
+}
+@media (max-width: 767px) {
+  .card .badges__list {
+    flex-wrap: nowrap;
+    overflow: scroll;
+  }
+}
+.card .badges__list__item {
+  border: 1px solid #C8D1D6;
+  font-size: 14px;
+  padding: 5px;
+  box-shadow: 0px 10px 10px rgba(5, 5, 6, 0.05);
+  border-radius: 5px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  color: #212527;
+}
+@media (max-width: 767px) {
+  .card .badges__list__item {
+    white-space: nowrap;
+  }
+}
+.card .badges__list__item::first-letter {
+  text-transform: uppercase;
+}
+.card .short-desc {
+  width: 100%;
+  visibility: hidden;
+  height: 0;
+  overflow: hidden;
+}
+.card .short-desc.active {
+  visibility: visible;
+  height: auto;
+}
+.card .short-desc__text {
+  font-size: 12px;
+  line-height: 20px;
+  margin-top: 10px;
+  color: #687e88;
+  max-height: 40px;
+  display: -webkit-box;
+}
+.card .deskr {
+  margin-bottom: 15px;
+}
+.card .deskr .company {
+  text-transform: uppercase;
+  font-size: 16px;
+  color: #FF5252;
+  margin-right: 20px;
+}
+.card .deskr .location {
+  font-size: 16px;
+}
+.card .card__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 25px;
+  flex-wrap: wrap;
+}
+.card .card__footer .butons {
+  display: flex;
+  align-items: center;
+}
+@media (max-width: 767px) {
+  .card .card__footer .butons {
+    width: 100%;
+  }
+}
+.card .card__footer .butons img {
+  height: 22px;
+  margin-right: 30px;
+  cursor: pointer;
+}
+.card .card__footer .butons img:hover {
+  transition: all 0.3s;
+  filter: brightness(0.7);
+}
+.card .card__footer .butons .resp {
+  display: block;
+  cursor: pointer;
+  position: relative;
+  font-weight: 600;
+  font-size: 16px;
+  color: #FF5252;
+}
+.card .card__footer .butons .resp::before {
+  content: url(../assets/img/apply.png);
+  margin-right: 10px;
+}
+.card .card__footer .butons .resp:hover {
+  filter: brightness(0.7);
+}
+.card .card__footer .cv {
+  font-size: 16px;
+  color: #212527;
+  display: none;
+}
+.card .card__footer .link {
+  font-size: 16px;
+  color: #FF5252;
+}
+.card .card__footer .time {
+  color: #687E88;
+}
+@media (max-width: 767px) {
+  .card .card__footer .time {
+    display: none;
+  }
+}
+.card .error {
+  width: 100%;
+  padding: 10px 20px;
+  background: #FFD8D8;
+  display: none;
+}
+.card .error__text {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.card .error__text::before {
+  content: url(../assets/img/Group.png);
+  margin-right: 10px;
+}
+
+.pagination {
+  padding: 0 0 30px 0;
+}
+.pagination .conteiner {
+  display: flex;
+  justify-content: space-between;
+}
+.pagination .pagination-item .page {
+  padding: 5px;
+  display: inline-block;
+  margin-right: 30px;
+  font-weight: 400;
+  font-size: 16px;
+  color: #FF5252;
+  cursor: pointer;
+}
+.pagination .pagination-item .page:hover {
+  color: #8b2525;
+}
+.pagination .pagination-item .page.active {
+  font-weight: 600;
+}
+.pagination .description__item {
+  display: inline-block;
+  color: #687E88;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 5px;
+  margin-left: 10px;
+}
+.pagination .description__item.active {
+  background: #FFFFFF;
+  border-radius: 5px;
+  color: #212527;
+}
+
+.uploadcare--widget__button {
+  padding: 0;
+  margin-right: 30px;
+}
+
+.uploadcare--widget__button_type_open {
+  display: block !important;
+  cursor: pointer;
+  position: relative;
+  font-weight: 600;
+  font-size: 16px;
+  color: #FF5252 !important;
+  background-color: transparent;
+  border: none;
+}
+.uploadcare--widget__button_type_open::before {
+  content: url(../assets/img/apply.png);
+  margin-right: 10px;
+}
+.uploadcare--widget__button_type_open:hover {
+  background-color: transparent;
+  filter: brightness(0.7);
+  font-weight: 600;
+  font-size: 16px;
+  color: #FF5252;
+}
+
+.uploadcare--widget__button_type_open:focus, .uploadcare--widget__button_type_open:hover {
+  background-color: transparent;
+  border: none;
+  font-weight: 600;
+  font-size: 16px;
+  color: #FF5252;
+}
+
+.uploadcare--widget__button_type_open:active {
+  border: none;
+  font-weight: 600;
+  font-size: 16px;
+  color: #FF5252 !important;
+}
+
+.uploadcare--widget__button:focus {
+  outline: none;
+}
+
+.uploadcare--widget__text {
+  display: none !important;
+}
+
+/*# sourceMappingURL=all.css.map */

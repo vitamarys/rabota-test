@@ -1,0 +1,86 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Убираем внутренние отступы */
+ul,
+ol {
+  padding: 0;
+}
+
+/* Убираем внешние отступы */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul,
+ol,
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+a {
+  text-decoration: none;
+}
+@font-face {
+  font-family:'Graphik';
+  font-weight: 600;
+  src: url(../assets/fonts/Graphik-Bold-Web.woff2);
+}
+@font-face {
+  font-family:'Graphik';
+  font-weight: 400;
+  src: url(../assets/fonts/Graphik-Regular-Web.woff2);
+}
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  overflow-x: hidden;
+  font-family:'Graphik';
+  background: #E5E5E5;
+}
+
+/* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
+ul,
+ol {
+  list-style: none;
+}
+
+/* Упрощаем работу с изображениями */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Наследуем шрифты для инпутов и кнопок */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+.conteiner {
+  width: 750px;
+  margin: 0 auto;
+  @media (max-width: 1199px) {
+    width: 730px;
+  }
+  @media (max-width: 575px) {
+    width: 100%;
+    padding: 0 10px;
+  }
+}
+.wrapper {
+  width: 815px;
+  margin: 0 auto;
+}
